@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Pre-defined color*/
+:root {
+    --clr-purple-light: rgb(125, 136, 218);
+    --clr-purple-dark: rgb(84, 59, 142);
+}
+
+.banner {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to right, var(--clr-purple-light), var(--clr-purple-dark));
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner .banner-left {
+    display: flex;
+    align-items: center;
+}
+
+.banner img {
+    width: 100px;
+    height: 100px;
+}
+
+.banner .navi-buttons {
+    margin-left: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.banner .navi-buttons span {
+    margin-right: 30px;
+}
+
+.navi-buttons span:hover {
+    color: rgb(201, 201, 201);
+    cursor: pointer;
+}
+
+.selected {
+    color: rgb(0, 84, 152);
+}
+
+.banner .login {
+    width: 100px;
+    height: 60px;
+    font-size: 22px;
+    border-radius: 10px;
+    margin-right: 30px;
+    background-color: rgb(125, 136, 218);
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.banner .login:hover {
+    background-color: rgb(147, 156, 225);
+    cursor: pointer;
+}
