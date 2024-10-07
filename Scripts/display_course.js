@@ -34,32 +34,37 @@ course_data.forEach(major => {
     const courseList = document.createElement('ul');
     courseList.classList.add('course-list');
 
+    // Add elements to courseContainer
     courseContainer.appendChild(majorName);
     courseContainer.appendChild(courseList);
 
     
     major.courses.forEach(course => {
+        // Create a li tag
         const courseBlock = document.createElement('li');
         courseBlock.classList.add('course');
 
+        // Create course-name title (h4)
         const courseName = document.createElement('h4');
         courseName.classList.add('course-name');
         courseName.innerHTML = course.name;
 
+        // Create course description
         const courseDescription = document.createElement('p');
         courseDescription.classList.add('course-description');
         courseDescription.innerHTML = course.description;
 
+        // Create view detail button
         const viewBtn = document.createElement('button');
         viewBtn.classList.add('view-detail-btn');
         viewBtn.innerHTML = "Course Details";
 
+        // Append elements to appropriate parent tag
         courseBlock.appendChild(courseName);
         courseBlock.appendChild(courseDescription);
         courseBlock.appendChild(viewBtn);
         courseList.appendChild(courseBlock);
     });
-
 
     content.appendChild(courseContainer);
 });

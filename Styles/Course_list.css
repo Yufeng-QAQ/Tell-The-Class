@@ -126,7 +126,7 @@ li {
 }
 
 .course {
-    height: 210px;
+    height: 230px;
     padding: 15px;
     border: 2px solid rgb(189, 187, 187);
     margin-top: 10px;
@@ -136,6 +136,12 @@ li {
 .course .course-name {
     font-size: 18px;
     font-weight: 600;
+    height: 42px;
+    overflow: hidden;
+        /* Hide overflowing text */
+        /* white-space: nowrap; */
+        /* Prevent text wrapping */
+        text-overflow: ellipsis;
 }
 
 .course-container .course-description {
@@ -165,4 +171,9 @@ li {
     color: white;
     background-color: var(--purple-dark);
     border-radius: 5px;
+}
+
+.course .view-detail-btn:hover {
+    background-color: var(--purple-light);
+    cursor: pointer;
 }
