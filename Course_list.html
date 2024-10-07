@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tall The Class</title>
+    <link rel="stylesheet" href="Styles/Course_list.css">
+</head>
+
+<body>
+    <!-- Banner HTML -->
+    <div class="banner">
+        <div class="banner-left">
+            <img src="Tail-logo.png" alt="Tail">
+            <div class="navi-buttons">
+                <button class="navi-btn selected">Home</button>
+                <button class="navi-btn">My Course</button>
+                <button class="navi-btn">Look-up Course</button>
+            </div>
+        </div>
+
+        <button class="login">Login</button>
+    </div>
+
+    <div class="content" id="content">
+        <h1 class="uni-name">University of Maryland, Baltimore County</h1>
+        <div class="course-container">
+            <p class="major-name">CMSC - Computer Science</p>
+            <ul class="course-list">
+                <li class="course">
+                    <h4 class="course-name">CMSC 341 - Data Structures</h4>
+                    <p class="course-description">
+                        An examination of a range of advanced data structures, with an emphasis on an object-oriented
+                        approach. Topics include
+                        asymptotic analysis; various binary search trees, including red-black and splay trees; skip
+                        lists as alternatives to
+                        binary search trees; data structures for multidimensional data such as K-D trees; heaps and
+                        priority queues, including
+                        binary heaps, binomial heaps, leftist heaps (and/or other mergeable heaps); B-trees for external
+                        storage; other commonly
+                        used data structures, such as hash tables and disjoint sets. Programming projects in this course
+                        will focus on
+                        implementation issues for data structures and on empirical analysis of their asymptotic
+                        performance.
+                    </p>
+                    <button class="view-detail-btn">
+                        Course Details
+                    </button>
+                </li>
+
+                <li class="course">
+                    <h4 class="course-name">CMSC 411 - Computer Architecture </h4>
+                    <p class="course-description">
+                        This course covers the design of complex computer systems making heavy use of the components and techniques discussed in
+                        CMSC 313, or CMPE 212 and CMPE 310. All parts of the computer system – CPU, memory and input/output – are discussed in
+                        detail. Topics include information representation, floating-point arithmetic, instructions set design issues (RISC vs.
+                        CISC), microprogrammed control, hardwired control, pipelining, memory caches, bus control and timing,input/output
+                        mechanism and issues in the construction of parallel processors.
+                    </p>
+                    <button class="view-detail-btn">
+                        Course Details
+                    </button>
+                </li>
+
+                <li class="course">
+                    <h4 class="course-name">CMSC 421 - operating System</h4>
+                    <p class="course-description">
+                        An introduction to the fundamentals of operating systems. Topics include interprocess communication, process scheduling,
+                        deadlock, memory management, virtual memory, file systems, and distributed systems. Formal principles are illustrated
+                        with examples and case studies of one or more contemporary operating systems.
+                    </p>
+                    <button class="view-detail-btn">
+                        Course Details
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+        <script src="Scripts/display_course.js"></script>
+
+</body>
+
+</html>
