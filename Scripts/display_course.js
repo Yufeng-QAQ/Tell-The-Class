@@ -55,8 +55,9 @@ course_data.forEach(major => {
         courseDescription.innerHTML = course.description;
 
         // Create view detail button
-        const viewBtn = document.createElement('button');
+        const viewBtn = document.createElement('a');
         viewBtn.classList.add('view-detail-btn');
+        viewBtn.href = "Course_detail.html";
         viewBtn.innerHTML = "Course Details";
 
         // Append elements to appropriate parent tag

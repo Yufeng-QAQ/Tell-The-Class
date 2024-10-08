@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -138,10 +139,6 @@ li {
     font-weight: 600;
     height: 42px;
     overflow: hidden;
-        /* Hide overflowing text */
-        /* white-space: nowrap; */
-        /* Prevent text wrapping */
-        text-overflow: ellipsis;
 }
 
 .course-container .course-description {
@@ -166,11 +163,13 @@ li {
 
 
 .course .view-detail-btn {
-    margin: 5px 0 0 5px;
-    padding: 5px;
+    margin: 2px 0 0 5px;
+    padding: 8px;
     color: white;
     background-color: var(--purple-dark);
     border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .course .view-detail-btn:hover {
