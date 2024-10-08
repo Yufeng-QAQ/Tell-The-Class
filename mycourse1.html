@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles/sheet.css" title="style" />
+    <link rel="stylesheet" href="Styles/index.css">
+    <title>Add Course Button</title>
+</head>
+<body>
+
+
+    <!-- Banner HTML -->
+    <div class="banner">
+        <div class="banner-left">
+            <img src="Tail-logo.png" alt="Tail">
+            <div class="navi-buttons">
+                <span class="selected">Home</span>
+                <span>My Course</span>
+                <span>Look-up Course</span>
+            </div>
+        </div>
+
+        <button class="login">Login</button>
+    </div>
+
+    <!-- Container for the course history section -->
+<div class="course-history">
+    <!-- Fall 2024 semester section -->
+    <div class="Fall2024">
+        <div class="button">
+            <!-- Button to add a class -->
+            <button class="setbutton" type="button">Add Class</button>
+        </div>
+
+        <!-- Header for Fall 2024 -->
+        <h4 class="text_bold"> Fall 2024</h4>
+
+        <!-- Class entry -->
+        <div class="class">
+            <div class="info">
+                <!-- Course title and number -->
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <!-- Course credits and professor's name -->
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <!-- Grade for the course -->
+            <span class="right"> A </span>
+        </div>
+
+        <!-- Repeat class entry for multiple classes (can be simplified by using a loop in programming) -->
+        <div class="class">
+            <div class="info">
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+
+        <div class="class">
+            <div class="info">
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+
+        <div class="class">
+            <div class="info">
+                <span class="text_size"><span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+    </div>
+
+    <!-- Spring 2024 semester section -->
+    <div class="Fall2024">
+        <h4 class="text_bold"> Spring 2024</h4>
+
+        <!-- Class entry for Spring 2024 -->
+        <div class="class">
+            <div class="info">
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+
+        <div class="class">
+            <div class="info">
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+
+        <div class="class">
+            <div class="info">
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+
+        <div class="class">
+            <div class="info">
+                <span class="text_size"> <span class="text_bold">CMSC 341</span> Data Structures</span>
+                <br />
+                <span> 3 Credits - Nick Allgood</span>
+            </div>
+            <span class="right"> A </span>
+        </div>
+    </div>
+</div>
+
+<!-- Container for the "Add Class" form -->
+<div class="Addclass">
+    <!-- First line of the form with Subject and Catalog Number -->
+    <div class="firstline">
+        <span>Subject: </span><input type="name" name="Subject">
+        <span>Catalog #: </span><input type="number" name="Catalog">
+    </div>
+
+    <!-- Class name input field -->
+    <div class="firstline">
+        <span>Class name: </span> <input type="name" name="Course name">
+    </div>
+
+    <!-- Professor and Credits input fields -->
+    <div class="firstline">
+        <span>Professor: </span> <input type="name" name="professor name">
+        <span># of Credit: </span> <input type="number" name="credit number">
+    </div>
+
+    <!-- Final Grade and Term input fields -->
+    <div class="firstline">
+        <span>Final Grade: </span>
+        <select name="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="other">other</option>
+        </select>
+        <span>Term: </span> <input type="year" name="Terms">
+    </div>
+
+    <!-- Buttons for adding the class or canceling -->
+    <div class="op">
+        <div>
+            <!-- Button to add the class -->
+            <button class="popbutton" type="button">Add Class</button>
+        </div>
+        <div>
+            <!-- Button to cancel the operation -->
+            <button class="popbutton" type="button">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
