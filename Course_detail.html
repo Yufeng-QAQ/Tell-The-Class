@@ -5,13 +5,14 @@
     <title>Tell The Class</title>
     <link rel="stylesheet" href="Styles/Banner.css">
     <link rel="stylesheet" href="Styles/Course_detail.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <!-- Banner HTML -->
     <div class="banner">
         <div class="banner-left">
-            <img src="Tail-logo.png" alt="Tail">
+            <img src="Image/Tail-logo.png" alt="Tail">
             <div class="navi-buttons">
                 <button class="navi-btn selected">Home</button>
                 <button class="navi-btn">
@@ -24,5 +25,15 @@
         </div>
     
         <button class="login">Login</button>
+    </div>
+
+    <div class="Course-detail-content">
+        <h1 class="course-name">IS448</h1>
+        <div class="grade-distribution">
+            <canvas id="gradeChart" ></canvas>
+        </div>
+        <script src="Scripts/bar_chart.js"></script>
+
+        <div class="course-comment"></div>
     </div>
 </body>
