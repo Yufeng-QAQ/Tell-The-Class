@@ -36,7 +36,12 @@
     color: white;
 }
 
-.navi-buttons .navi-btn:hover {
+.banner .navi-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.navi-buttons .navi-btn a:hover {
     color: rgb(201, 201, 201);
     cursor: pointer;
 }
