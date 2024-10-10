@@ -19,157 +19,199 @@ li {
     --purple-dark: rgb(84, 59, 142);
 }
 
+
 /* Styles for the "Add Class" button */
 .setbutton {
     background-color: rgb(0, 128, 255); /* Button background color */
-    width: 130px; /* Button width */
-    height: 40px; /* Button height */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 20px; /* Space below the button */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
+    width: 130px; 
+    height: 40px;
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    cursor: pointer; 
+    font-size: 16px; 
 }
 
 /* Container for the course history */
 .course-history {
-    max-width: 800px; /* Maximum width of the container */
-    margin: 20px auto; /* Centered margin */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Inner padding */
-    background-color: #f9f9f9; /* Light background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    max-width: 800px; 
+    margin: 20px auto; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Margin below each semester section */
 .Fall2024 {
-    margin-bottom: 20px; /* Space below this section */
+    margin-bottom: 20px; 
 }
 
 /* Bold text styling */
 .text_bold {
-    font-weight: bold; /* Bold font weight */
-    font-size: 22px; /* Font size */
-    margin: 10px 0; /* Vertical margin */
-    color: #2e2e8f; /* Dark blue color */
+    font-weight: bold; 
+    font-size: 22px; 
+    margin: 10px 0; 
+    color: #2e2e8f; 
 }
 
 /* Styles for each class entry */
 .class {
-    display: flex; /* Flexbox layout */
-    justify-content: space-between; /* Space between elements */
-    align-items: center; /* Vertically align items */
-    padding: 10px 0; /* Vertical padding */
-    border-bottom: 1px solid #ddd; /* Bottom border */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 0; 
+    border-bottom: 1px solid #ddd; 
 }
 
 /* Makes the info section take up remaining space */
 .info {
-    flex-grow: 1; /* Allow this to grow and fill space */
+    flex-grow: 1; 
 }
 
 /* Text size for class info */
 .text_size {
-    font-size: 18px; /* Font size */
+    font-size: 18px; 
 }
 
 /* Styles for the grade display */
 .right {
-    color: blue; /* Text color for grades */
-    font-weight: bold; /* Bold font weight */
-    font-size: 24px; /* Font size */
+    color: blue;
+    font-weight: bold;
+    font-size: 24px; 
 }
 
 /* Styles for semester headings */
 .Fall2024 h4 {
-    margin: 20px 0; /* Margin above and below */
-    border-bottom: 2px solid #ddd; /* Bottom border */
-    padding-bottom: 5px; /* Space below the text */
+    margin: 20px 0; 
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 5px; 
 }
 
 /* Styles for the "Add Class" form container */
 .Addclass {
-    max-width: 700px; /* Maximum width of the form */
-    margin: 0 auto; /* Centered margin */
-    border: 2px solid #ddd; /* Border around the form */
-    padding: 20px; /* Inner padding */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    max-width: 700px; 
+    margin: 0 auto; 
+    border: 2px solid #ddd; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Styles for the first line of the form */
 .firstline {
-    display: flex; /* Flexbox layout */
-    align-items: center; /* Vertically align items */
-    margin-bottom: 15px; /* Space below the line */
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px; 
 }
 
 /* Styles for labels in the first line */
 .firstline span {
-    width: 120px; /* Fixed width for labels */
-    margin-right: 10px; /* Space to the right of the label */
-    font-weight: bold; /* Bold font weight */
-    color: #2e2e8f; /* Dark blue color */
+    width: 120px; 
+    margin-right: 10px; 
+    font-weight: bold; 
+    color: #2e2e8f; 
 }
 
 /* Styles for input and select elements in the first line */
 .firstline input, .firstline select {
-    flex: 1; /* Allow elements to grow and fill space */
-    padding: 8px; /* Inner padding */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px; /* Rounded corners */
+    flex: 1; 
+    padding: 8px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
 }
 
 /* Fixed width for select elements */
 .firstline select {
-    width: 150px; /* Fixed width */
+    width: 150px; 
 }
 
 /* Styles for specific input elements */
 .firstline input[name="Subject"] {
-    margin-right: 30px; /* Space to the right */
+    margin-right: 30px; 
 }
 
 .firstline input[name="credit number"] {
-    margin-left: 20px; /* Space to the left */
+    margin-left: 20px; 
 }
 
 .firstline input[name="Terms"] {
-    margin-left: 30px; /* Space to the left */
+    margin-left: 30px; 
 }
 
 /* Styles for the operation buttons (Add and Cancel) */
 .op {
-    display: flex; /* Flexbox layout */
-    justify-content: flex-end; /* Align to the right */
-    margin-top: 20px; /* Space above */
+    display: flex; 
+    justify-content: flex-end; 
+    margin-top: 20px; 
 }
 
 /* Styles for the pop-up buttons */
 .popbutton {
-    padding: 10px 20px; /* Padding for the button */
-    background-color: #007bff; /* Blue background color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-left: 10px; /* Space to the left of the button */
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-left: 10px;
 }
 
 /* Styles for the pop-up button hover effect */
 .popbutton:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 /* Styles for the cancel button */
 .popbutton.cancel {
-    background-color: #f0f0f0; /* Light gray background */
-    color: #666; /* Gray text color */
+    background-color: #f0f0f0; 
+    color: #666; 
 }
 
 /* Styles for the cancel button hover effect */
 .popbutton.cancel:hover {
-    background-color: #ddd; /* Slightly darker gray on hover */
+    background-color: #ddd; 
+}
+
+.QandA {
+    /* Styles for the main FAQ container, setting padding, border, and centering the content */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+.text_bold {
+    /* Styles for bold text elements, emphasizing titles with larger font size and margin */
+    font-weight: bold;
+    font-size: 1.5em; 
+    margin-bottom: 20px; 
+}
+
+.box {
+    /* Styles for individual FAQ boxes, defining layout, padding, border, and background color */
+    text-align: left;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; 
+}
+
+.question {
+    /* Styles for question text, including bottom padding and bold font weight */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold; 
+}
+
+.answer {
+    /* Styles for answer text, adding top padding and a subtle text color */
+    padding-top: 10px;
+    color: #555; 
 }
