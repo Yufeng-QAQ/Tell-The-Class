@@ -50,6 +50,10 @@
     color: rgb(0, 84, 152);
 }
 
+.banner .navi-buttons .selected:hover {
+    color: rgb(5, 94, 167);
+}
+
 .banner .login {
     width: 60px;
     height: 35px;
