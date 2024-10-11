@@ -1,3 +1,4 @@
+/* General css */
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +20,7 @@ li {
     --purple-dark: rgb(84, 59, 142);
 }
 
+/* Course-detail Section */
 .Course-detail-content {
     width: 80%;
     margin: 0 auto;

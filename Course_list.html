@@ -30,11 +30,16 @@
         <button class="login">Login</button>
     </div>
 
+    <!-- Course List content section -->
     <div class="content" id="content">
         <h1 class="uni-name">University of Maryland, Baltimore County</h1>
+        
+        <!-- This section contain all list of courses -->
         <div class="course-container">
             <p class="major-name">CMSC - Computer Science</p>
             <ul class="course-list">
+
+                <!-- Each list contains the name and description of a course -->
                 <li class="course">
                     <h4 class="course-name">CMSC 341 - Data Structures</h4>
                     <p class="course-description">
@@ -51,6 +56,8 @@
                         implementation issues for data structures and on empirical analysis of their asymptotic
                         performance.
                     </p>
+
+                    <!-- Will bring user to the detail page when clicked -->
                     <a href="Course_detail.html" class="view-detail-btn">Course Detail</a>
                 </li>
 
@@ -80,6 +87,8 @@
 
     </div>
 
+    <!-- This script use to display the rest of courses in other major,
+     basic structure is the same as above -->
     <script src="Scripts/display_course.js"></script>
 
 </body>
