@@ -33,8 +33,10 @@ li {
     padding: 20px;
 }
 
+/* Grade bar chart section */
 .Course-detail-content .grade-distribution {
     height: 400px;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -44,4 +46,80 @@ li {
 .Course-detail-content .grade-distribution canvas {
     width: 100% !important;
     height: auto !important;
+}
+
+
+/* Course comment section */
+.course-comment {
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-comment .post-comment {
+    background-color: var(--purple-dark);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.course-comment .post-comment:hover {
+    background-color: var(--purple-light);
+    cursor: pointer;
+}
+
+.course-comment .comment {
+    display: flex;
+    min-height: 100px;
+    max-width: 700px;
+    margin-top: 15px;
+
+}
+
+.course-comment .comment img {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.course-comment .comment .comment-info {
+    margin-left: 5px;
+    width: 100%;
+    border-bottom: 2px solid gray;
+}
+
+.course-comment .comment .comment-header {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+
+.grade {
+    font-weight: 600;
+}
+
+.course-comment .comment-info .comment-text {
+    padding: 5px;
+    padding-bottom: 10px;
+    min-height: 50px;
+}
+
+/* Back to Top button */
+.to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(84, 59, 142, 0.7);
+    color: white;
+    border-radius: 10px;
+
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
 }

@@ -10,13 +10,15 @@
 
 <body>
     <!-- Banner HTML -->
-    <div class="banner">
+    <div class="banner" id="banner">
         <div class="banner-left">
             <img src="Image/Tail-logo.png" alt="Tail">
             <div class="navi-buttons">
-                <button class="navi-btn">Home</button>
                 <button class="navi-btn">
-                    <a href="MyCourse.html">My Course</a>
+                    <a href="#">Home</a>
+                </button>
+                <button class="navi-btn">
+                    <a href="#">My Course</a>
                 </button>
                 <button class="navi-btn selected">
                     <a href="Course_list.html" class="selected">Look-up Course</a>
@@ -27,13 +29,75 @@
         <button class="login">Login</button>
     </div>
 
+    <!-- Content HTML -->
     <div class="Course-detail-content">
         <h1 class="course-name">IS448</h1>
+
+        
+        <!-- Grade distribution bar chart -->
         <div class="grade-distribution">
             <canvas id="gradeChart" ></canvas>
         </div>
         <script src="Scripts/bar_chart.js"></script>
 
-        <div class="course-comment"></div>
+
+        <!-- Student comments section -->
+        <div class="course-comment">
+            <button class="post-comment">
+                Post Comment
+            </button>
+
+            <div class="comment">
+                <img src="Image/user.png" alt="user">
+                <div class="comment-info">
+                    <div class="comment-header">
+                        <span class="grade">Grade: A</span>
+                        <span>Prof: Professor Name</span>
+                        <span>10-11-2024</span>
+                    </div>
+                    <p class="comment-text">
+                        The professor was very nice! Just need to prepare for the test!
+                    </p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <img src="Image/user.png" alt="user">
+                <div class="comment-info">
+                    <div class="comment-header">
+                        <span class="grade">Grade: A</span>
+                        <span>Prof: Professor Name</span>
+                        <span>10-11-2024</span>
+                    </div>
+                    <p class="comment-text">
+                        The professor was very nice! Just need to prepare for the test!
+                        The professor was very nice! Just need to prepare for the test!
+                        The professor was very nice! Just need to prepare for the test!
+                        The professor was very nice! Just need to prepare for the test!
+                        The professor was very nice! Just need to prepare for the test!
+                    </p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <img src="Image/user.png" alt="user">
+                <div class="comment-info">
+                    <div class="comment-header">
+                        <span class="grade">Grade: A</span>
+                        <span>Prof: Professor Name</span>
+                        <span>10-11-2024</span>
+                    </div>
+                    <p class="comment-text">
+                        If you study, you can get an A.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        
     </div>
+    <a href="#banner" class="to-top">
+        <h4>Back to Top</h4>
+    </a>
 </body>
