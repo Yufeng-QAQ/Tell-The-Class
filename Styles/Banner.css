@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+:root {
+    --purple-light: rgb(125, 136, 218);
+    --purple-dark: rgb(84, 59, 142);
+}
+
 .banner {
     display: flex;
     height: 64px;
@@ -56,7 +61,7 @@
     color: rgb(5, 94, 167);
 }
 
-.banner .login {
+.banner .login{
     width: 60px;
     height: 35px;
     font-size: 14px;

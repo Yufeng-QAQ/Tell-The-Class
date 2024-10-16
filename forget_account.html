@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="Styles/Banner.css">
+    <link href="Styles/Home.css" rel="stylesheet" type="text/css" />
+    <title>Sign In</title>
+</head>
+
+<body>
+    <!-- Banner HTML -->
+    <div class="banner">
+        <div class="banner-left">
+            <img src="Image/Tail-logo.png" alt="Tail">
+            <div class="navi-buttons">
+                <button class="navi-btn">
+                    <a href="Home.html" class="selected">Home</a>
+                </button>
+                <button class="navi-btn">
+                    <a href="MyCourse.html">My Course</a>
+                </button>
+                <button class="navi-btn">
+                    <a href="Course_list.html">Look-up Course</a>
+                </button>
+                <button class="navi-btn">
+                    <a href="FAQ.html">Help</a>
+                </button>
+            </div>
+        </div>
+
+        <a href="Home.html">
+            <button class="login">
+                Login
+            </button>
+        </a>
+    </div>
+
+    <div class="home-content">
+        <div class="Sign-in">
+            <p id="Sign_in_title">
+                Forget Account
+            </p>
+            <!-- form type for future implementations -->
+            <form class="sign_in_form" action="forget_account.html" method="POST">
+                <div class="login-info">
+                    <p><label>
+                            <span class="input_variable">Username</span><br />
+                            <input class="account_input" type="text" name="username" size="30" />
+                        </label></p>
+                </div>
+
+                <button id="sign_in_button" type="button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- The links at the bottom to traverse to different pages -->
+    <div class="Bottom">
+        <p>
+            <a href="Home.html"> Home</a>
+            /
+            <a href="MyCourse.html"> My Course </a>
+            /
+            <a href=""> Help</a>
+        </p>
+    </div>
+
+</body>

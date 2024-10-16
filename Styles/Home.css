@@ -1,0 +1,135 @@
+/*setting the font of the page*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*sets the color of links and get rid of the underline*/
+a {
+    text-decoration: none;
+}
+
+/*styles for the header*/
+.Header {
+    background-color: rgb(240, 245, 250);
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 10px;
+}
+
+/*The string "TAIL" of the header*/
+#tail {
+    color: rgb(40, 95, 255);
+}
+
+/*The image at the home page*/
+#home_image {
+    float: right;
+    margin-right: 150px;
+    padding-top: 5px;
+}
+
+/*logo*/
+#tail_img {
+    float: left;
+    margin-top: -15px;
+}
+
+.home-content {
+    display: flex;
+    width: 80%;
+    height: 650px;
+    margin: 0 auto;
+    background-image: url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    align-items: center;
+    justify-content: center;
+}
+
+/*the sign in section*/
+.Sign-in {
+    margin-bottom: 140px;
+    width: 30%;
+    min-width: 400px;
+    height: 350px;
+    border-radius: 3pt;
+    border-style: solid;
+    color: white;
+    background-color: rgb(100, 100, 100, 0.7);
+    border-color: rgb(227, 232, 236);
+}
+
+/*The submit button of the form*/
+#sign_in_button {
+    border-radius: 5px;
+    color: white;
+    background-color: var(--purple-dark);
+    border: none;
+    font-size: 16px;
+    padding: 12px 24px;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+#sign_in_button:hover {
+    background-color: var(--purple-light);
+    cursor: pointer;
+}
+
+/*The string "Sign In" at the top of the section*/
+#Sign_in_title {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.login-info {
+    margin-left: 80px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.login-info p {
+    width: 70%;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+/*the uername and password section*/
+.account_input {
+    background-color: rgb(227, 229, 231);
+    width: 100%;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+/*the forget password and create account links*/
+#to_account {
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+#to_account a{
+    color: white;
+}
+
+/*the sign in section in general*/
+.sign_in_form {
+    /* color: rgb(100, 100, 100); */
+    color: white;
+}
+
+/*The bottom links*/
+.Bottom {
+    margin-top: 10px;
+    text-align: center;
+    clear: right;
+}
