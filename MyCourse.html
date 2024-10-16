@@ -4,38 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Styles/MyCourse.css" title="style" />
+    <link rel="stylesheet" href="Styles/MyCourse.css" />
     <link rel="stylesheet" href="Styles/Banner.css">
-    <title>Add Course Button</title>
+    <title>My Course</title>
 </head>
 
 <body>
 
 
     <!-- Banner HTML -->
-    <div class="banner">
+    <!-- Banner HTML -->
+    <div class="banner" id="banner">
         <div class="banner-left">
             <img src="Image/Tail-logo.png" alt="Tail">
             <div class="navi-buttons">
-                <button class="navi-btn">
-                    <a href="Home.html">Home</a>
-                </button>
-                <button class="navi-btn">
-                    <a href="MyCourse.html" class="selected">My Course</a>
-                </button>
-                <button class="navi-btn">
-                    <a href="Course_list.html">Look-up Course</a>
-                </button>
-                <button class="navi-btn">
-                    <a href="FAQ.html">Help</a>
-                </button>
+                <a href="Home.html">
+                    <span class="navi-btn">
+                        Home
+                    </span>
+                </a>
+                <a href="MyCourse.html">
+                    <span class="navi-btn selected">
+                        My Course
+                    </span>
+                </a>
+                <a href="Course_list.html">
+                    <span class="navi-btn">
+                        Look-up Course
+                    </span>
+                </a>
+                <a href="FAQ.html">
+                    <span class="navi-btn">
+                        Help
+                    </span>
+                </a>
             </div>
         </div>
-
+    
         <a href="Home.html">
-            <button class="login">
+            <span class="login">
                 Login
-            </button>
+            </span>
         </a>
     </div>
 
