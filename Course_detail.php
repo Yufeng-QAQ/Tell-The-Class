@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <!-- This page is implemented by Yufeng -->
+
     <!-- Banner HTML -->
     <?php 
         $currentPage = 'Course_list';
@@ -73,9 +75,66 @@
 
         <!-- Student comments section -->
         <div class="course-comment">
-            <button class="post-comment">
+            <button class="post-comment" onclick="toggleForm()">
                 Post Comment
             </button>
+
+            <div class="form-container">
+
+                <!-- The processing php is not yet implemented due to it will use The
+                 cookie technique to verify if user is logged in. Which is belongs to 
+                 a task of another team member -->
+
+                <form class="comment-form" action="" method="">
+                    <!-- Grade Selection -->
+                    <label for="grade">Grade</label>
+                    <select id="grade" name="grade" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="F">F</option>
+                    </select>
+                    <br>
+                    
+                    <!-- Professor Name Input -->
+                    <label for="professor_name">Professor Name</label>
+                    <input type="text" id="professor_name" name="professor_name" required>
+                    <br>
+                    <!-- Date Input -->
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                    <br>
+
+                    <!-- Comment Input -->
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Enter your comment" required></textarea>
+                    <br>
+
+                    <!-- Submit Button -->
+                    <input type="submit" value="Submit Comment">
+
+                </form>
+            </div>
+
+            <script>
+                function toggleForm() {
+                    const form = document.querySelector('.form-container');
+                    // Change the button content to "Close"
+                    const post_btn = document.querySelector('.post-comment');
+                    post_btn.innerHTML = "Close";
+                    
+                    // Toggle display property when the "post comment" button is hit
+                    if (form.style.display === 'none' || form.style.display === '') {
+                        form.style.display = 'block';
+                    } else {
+                        form.style.display = 'none';
+                        // Reset the form to initial state
+                        document.querySelector('.comment-form').reset();
+                        post_btn.innerHTML = "Post Comment";
+                    }
+                }   
+            </script>
 
             <!-- This is the individule comment block -->
             <div class="comment">
@@ -131,6 +190,11 @@
 
 
     </div>
+
+    
+
+
+
     <a href="#banner" class="to-top">
         <h4>Back to Top</h4>
     </a>

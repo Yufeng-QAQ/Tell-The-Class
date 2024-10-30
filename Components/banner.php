@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <a href="Home.html">
+    <a href="Home.php">
         <span class="login">
             Login
         </span>

@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <!-- This page is implemented by Yufeng -->
+
     <!-- Banner HTML -->
     <?php 
         $currentPage = 'Course_list';
@@ -64,7 +66,7 @@
                         echo '<h4 class="course-name">' . $row['course_code'] . ' - ' . $row['course_name'] . '</h4>';
                         echo '<p class="course-description">' . $row['course_description'] . '</p>';
 
-                        // View detail button that navigate to the grade distribution page
+                        // View detail button that navigate to the grade distribution page, passing parameter 'course_code'
                         echo '<form action="course_detail.php" method="get">';
                         echo '<input type="hidden" name="course_code" value="' . $row['course_code'] . '">';
                         echo '<button type="submit" class="view-detail-btn">View Details</button>';

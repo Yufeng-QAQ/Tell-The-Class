@@ -53,7 +53,7 @@
 }
 
 .banner .navi-buttons .selected {
-    color: rgb(0, 84, 152);
+    color: rgb(34, 70, 99);
 }
 
 .banner .navi-buttons .selected:hover {
@@ -70,6 +70,7 @@
     text-align: center;
     font-weight: 600;
     margin-right: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .banner .login:hover {
