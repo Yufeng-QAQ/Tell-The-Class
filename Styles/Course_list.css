@@ -108,11 +108,13 @@ li {
 .course .view-detail-btn {
     margin: 2px 0 0 5px;
     padding: 8px;
+    font-size: 14px;
     color: white;
     background-color: var(--purple-dark);
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
+    border: none;
 }
 
 .course .view-detail-btn:hover {

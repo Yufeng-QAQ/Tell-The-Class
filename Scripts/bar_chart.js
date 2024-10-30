@@ -3,7 +3,7 @@ const gradeData = {
     labels: ['A', 'B', 'C', 'D', 'F'], // Grade labels
     datasets: [{
         label: 'Number of Students',
-        data: [20, 30, 25, 10, 5], // Number of students for each grade
+        data: grade_data, // Number of students for each grade
         backgroundColor: [
             'rgba(75, 192, 192, 0.6)', // A
             'rgba(54, 162, 235, 0.6)', // B

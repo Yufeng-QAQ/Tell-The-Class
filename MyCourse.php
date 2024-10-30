@@ -10,43 +10,11 @@
 </head>
 
 <body>
-
-
     <!-- Banner HTML -->
-    <!-- Banner HTML -->
-    <div class="banner" id="banner">
-        <div class="banner-left">
-            <img src="Image/Tail-logo.png" alt="Tail">
-            <div class="navi-buttons">
-                <a href="Home.html">
-                    <span class="navi-btn">
-                        Home
-                    </span>
-                </a>
-                <a href="MyCourse.html">
-                    <span class="navi-btn selected">
-                        My Course
-                    </span>
-                </a>
-                <a href="Course_list.html">
-                    <span class="navi-btn">
-                        Look-up Course
-                    </span>
-                </a>
-                <a href="FAQ.html">
-                    <span class="navi-btn">
-                        Help
-                    </span>
-                </a>
-            </div>
-        </div>
-    
-        <a href="Home.html">
-            <span class="login">
-                Login
-            </span>
-        </a>
-    </div>
+    <?php 
+        $currentPage = 'MyCourse';
+        include 'Components/banner.php';
+    ?>
 
     <!-- Container for the course history section -->
     <div class="course-history">
