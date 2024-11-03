@@ -22,7 +22,8 @@ li {
 
 /* Styles for the "Add Class" button */
 .setbutton {
-    background-color: rgb(0, 128, 255); /* Button background color */
+    display: block;
+    background-color: var(--purple-dark); /* Button background color */
     width: 130px; 
     height: 40px;
     color: white; 
@@ -31,11 +32,16 @@ li {
     margin-bottom: 20px; 
     cursor: pointer; 
     font-size: 16px; 
+    transition: var(--color-transition);
+}
+
+.setbutton:hover {
+    background-color: var(--purple-light);
 }
 
 /* Container for the course history */
 .course-history {
-    max-width: 800px; 
+    max-width: 700px; 
     margin: 20px auto; 
     border: 1px solid #ddd; 
     border-radius: 10px; 
@@ -45,15 +51,25 @@ li {
 }
 
 /* Margin below each semester section */
-.Fall2024 {
+.semester {
     margin-bottom: 20px; 
+}
+
+.semester-title {
+    width: 200px;
+    font-size: 24px;
+}
+
+.course-code {
+    width: 130px;
+    font-size: 22px;
 }
 
 /* Bold text styling */
 .text_bold {
+    display: inline-block;
     font-weight: bold; 
-    font-size: 22px; 
-    margin: 10px 0; 
+    margin: 5px 0; 
     color: #2e2e8f; 
 }
 
@@ -81,6 +97,10 @@ li {
     color: blue;
     font-weight: bold;
     font-size: 24px; 
+}
+
+.form-container {
+    display: none;
 }
 
 /* Styles for semester headings */
@@ -113,6 +133,7 @@ li {
     margin-right: 10px; 
     font-weight: bold; 
     color: #2e2e8f; 
+    margin-right: 10px;
 }
 
 /* Styles for input and select elements in the first line */
@@ -133,12 +154,12 @@ li {
     margin-right: 30px; 
 }
 
-.firstline input[name="credit number"] {
-    margin-left: 20px; 
+.firstline input[name="Professor_name"] {
+    margin-right: 30px; 
 }
 
-.firstline input[name="Terms"] {
-    margin-left: 30px; 
+.firstline select[name="Grade"] {
+    margin-right: 30px; 
 }
 
 /* Styles for the operation buttons (Add and Cancel) */
@@ -151,17 +172,18 @@ li {
 /* Styles for the pop-up buttons */
 .popbutton {
     padding: 10px 20px; 
-    background-color: #007bff; 
+    background-color: var(--purple-dark); 
     color: white;
     border: none;
     border-radius: 5px; 
     cursor: pointer; 
     margin-left: 10px;
+    transition: var(--color-transition);
 }
 
 /* Styles for the pop-up button hover effect */
 .popbutton:hover {
-    background-color: #0056b3;
+    background-color: var(--purple-light);
 }
 
 /* Styles for the cancel button */

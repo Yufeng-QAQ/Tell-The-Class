@@ -6,6 +6,8 @@
 :root {
     --purple-light: rgb(125, 136, 218);
     --purple-dark: rgb(84, 59, 142);
+
+    --color-transition: background-color 0.3s ease;
 }
 
 .banner {

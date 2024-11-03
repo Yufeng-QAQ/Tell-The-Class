@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- This page is implemented by Yufeng -->
+    <!-- Page written by Yufeng -->
 
     <!-- Banner HTML -->
     <?php 
