@@ -117,7 +117,7 @@ a {
     margin-top: 15px;
 }
 
-#to_account a{
+#to_account a {
     color: white;
 }
 
@@ -132,4 +132,13 @@ a {
     margin-top: 10px;
     text-align: center;
     clear: right;
+}
+
+.home-content .welcome-msg {
+    color: white;
+    font-size: 50px;
+    font-family: fantasy;
+    text-align: center;
+    justify-content: center;
+    margin-top: 130px;
 }

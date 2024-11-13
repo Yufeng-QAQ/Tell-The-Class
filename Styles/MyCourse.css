@@ -50,6 +50,12 @@ li {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
+.prompt-login {
+    text-align: center;
+    font-size: 20px;
+
+}
+
 /* Margin below each semester section */
 .semester {
     margin-bottom: 20px; 
@@ -80,7 +86,17 @@ li {
     align-items: center; 
     padding: 10px 0; 
     border-bottom: 1px solid #ddd; 
+    transition: var(--color-transition);
 }
+
+.class:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.class:hover {
+    background-color: #ebebeb;
+}
+
 
 /* Makes the info section take up remaining space */
 .info {
@@ -90,6 +106,12 @@ li {
 /* Text size for class info */
 .text_size {
     font-size: 18px; 
+    font-weight: 600;
+}
+
+.sub-info {
+    color: #5c5c5c;
+    font-size: 14px;
 }
 
 /* Styles for the grade display */

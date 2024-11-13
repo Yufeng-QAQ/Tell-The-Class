@@ -2,21 +2,18 @@
 <html lang="EN">
 <head>
     <title>Course page</title>
-    <link rel="stylesheet" type="text/css" href="form_proc.css" />
+    <link rel="stylesheet" href="../Styles/Feedback.css">
 </head>
 
 <body>
+    <?php
+    // Connect to the database
+    $db = mysqli_connect("studentdb-maria.gl.umbc.edu","yufengl1","yufengl1","yufengl1");
 
-<?php
-//Zhenqi Huang
+    if(mysqli_connect_errno())
+        exit("Error - could not connect to MySQL");
 
-// Connect to the database
-$db = mysqli_connect("studentdb-maria.gl.umbc.edu","zhenqih1","zhenqih1","zhenqih1");
-
-if(mysqli_connect_errno())
-    exit("Error - could not connect to MySQL");
-
-// Check if the form is submitted
+    // Check if the form is submitted
 
     // Sanitize input data using prepared statements
     $subject = htmlspecialchars($_POST['Subject']);
@@ -28,68 +25,109 @@ if(mysqli_connect_errno())
     $term = htmlspecialchars($_POST['Terms']);
 
     // Validate inputs
-    
+    $passed = true;
+
+    $curr_user = "";
+
+    // Check if user is logged in
+    if (isset($_COOKIE['local_user'])) {
+        $curr_user = htmlspecialchars($_COOKIE['local_user']);
+    } else {
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Error: You have not logged in.</p>
+            </div>";
+    }
+
     if (!preg_match("/^[a-zA-Z\s]+$/", $subject)) {
-        print("Subject is required and should contain only letters and whitespace.");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
-        exit;
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Error: Subject is required and should contain only letters and whitespace.</p>
+            </div>";
     }
     if (!preg_match("/^\d+$/", $catalogNumber)) {
-        print("Valid catalog number is required (numeric only).");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
-        exit;
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Valid catalog number is required (numeric only).</p>
+            </div>";
     }
     if (!preg_match("/^[a-zA-Z\s]+$/", $courseName)) {
-        print("Course name is required and can contain letters and whitespace.");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
-        exit;
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Course name is required and can contain letters and whitespace.</p>
+            </div>";
     }
     if (!preg_match("/^[a-zA-Z\s]+$/", $professorName)) {
-        print("Professor name is required and should contain only letters and whitespace.");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
-        exit;
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Professor name is required and should contain only letters and whitespace.</p>
+            </div>";
     }
     if (!preg_match("/^[1-6]$/", $creditNumber)) {
-        print("Valid number of credits is required (1-6).");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
-        exit;
+        $passed = false;
+        echo "<div class='message error'>
+                <p>A valid number of credits is required (1-6).</p>
+            </div>";
     }
     if (!preg_match("/^[A-F]$/", $finalGrade)) {
-        print("Final grade is required and must be a letter grade (A-F).");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
-        exit;
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Final grade is required and must be a letter grade (A-F).</p>
+            </div>";
     }
     if (!preg_match("/^(Fall|Winter|Spring|Summer) \d{4}$/", $term)) {
-        print("Term is required and must be in the format 'Fall YYYY', 'Winter YYYY', 'Spring YYYY', or 'Summer YYYY', where YYYY is a four-digit year.");
-        echo " <a href='../MyCourse.php'>Go Back<a/>";
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Term is required and must be in the format 'Fall YYYY', 'Winter YYYY', 'Spring YYYY', or 'Summer YYYY', where YYYY is a four-digit year.</p>
+            </div>";
+    }
+
+    if (!$passed) {
+        echo "<div class='message error'>
+                <a href='../MyCourse.php'>Go Back<a/>
+            </div>";
+        mysqli_close($db);
         exit;
     }
-    
     
     ?>
 
 
-
     <?php
+    // Prevent SQL injection
+    $subject = mysqli_real_escape_string($db, $subject);
+    $catalogNumber = mysqli_real_escape_string($db, $catalogNumber);
+    $courseName = mysqli_real_escape_string($db, $courseName);
+    $professorName = mysqli_real_escape_string($db, $professorName);
+    $creditNumber = mysqli_real_escape_string($db, $creditNumber);
+    $finalGrade = mysqli_real_escape_string($db, $finalGrade);
+    $term = mysqli_real_escape_string($db, $term);
 
-    $curr_user = "Tail";
 
     $constructed_query = "INSERT INTO enrollments (subject, user, catalog, course_name, prof_name, credit_number, grade, term) 
-                VALUES ('$subject', '$$curr_user', '$catalogNumber', '$courseName', '$professorName', '$creditNumber', '$finalGrade', '$term')";
+                VALUES ('$subject', '$curr_user', '$catalogNumber', '$courseName', '$professorName', '$creditNumber', '$finalGrade', '$term')";
         
-    print("CHECK PROGRAM IS WORKING MESSAGE: The query is: $constructed_query</br>");
 
     $result = mysqli_query($db, $constructed_query);
 
     // Check for errors
-    if (! $result) {
+    if (!$result) {
         print("Error - query could not be executed");
 		$error = mysqli_error($db);
-		print "<p> . $error . </p>";
+        echo "<div class='message error'>
+                <p>Error - query could not be executed: $error</p>
+            </div>";
+        mysqli_close($db);
 		exit;
 
     }else{
+        mysqli_close($db);
         // Redirect to MyCourse page after 3 seconds
+        echo "<div class='message success'>
+                <p>Success! The course \"$courseName\" has been added to your record.</p>
+                <a href='../MyCourse.php'>Go Back<a/>
+            </div>";
+
         echo "<script>
             setTimeout(function() {
                 window.location.href = '../MyCourse.php';

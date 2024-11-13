@@ -87,9 +87,15 @@
             }
         </script>
 
-
+        <!-- PHP script written by Yufeng -->
         <?php
-        $curr_user = "Tail";
+        $curr_user = "";
+        if (isset($_COOKIE['local_user'])) {
+            $curr_user = $_COOKIE["local_user"];
+        } else {
+            echo "<p class='prompt-login'>Please login in to see My Course record</p>";
+        }
+        
 
         // Connect to the database
         $db = mysqli_connect("studentdb-maria.gl.umbc.edu","zhenqih1","zhenqih1","zhenqih1");
@@ -145,7 +151,7 @@
                 echo '        <span class="text_size"><span class="text_bold course-code">' . htmlspecialchars($subject . ' ' . $catalog) . '</span> ';
                 echo                 htmlspecialchars($course_name) . '</span>';
                 echo '        <br />';
-                echo '        <span>' . htmlspecialchars($credits) . ' Credits - ' . htmlspecialchars($prof_name) . '</span>';
+                echo '        <span class="sub-info">' . htmlspecialchars($credits) . ' Credits · ' . htmlspecialchars($prof_name) . '</span>';
                 echo '    </div>';
                 echo '    <span class="right">' . htmlspecialchars($grade) . '</span>';
                 echo '</div>';
