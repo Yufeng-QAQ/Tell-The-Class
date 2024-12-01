@@ -84,10 +84,6 @@
 
     </div>
 
-    <!-- This script use to display the rest of courses in other major,
-     basic structure is the same as above -->
-    <!-- <script src="Scripts/display_course.js"></script> -->
-
 </body>
 
 </html>

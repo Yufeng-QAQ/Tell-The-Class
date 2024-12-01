@@ -24,6 +24,8 @@
     $finalGrade = htmlspecialchars($_POST['Grade']);
     $term = htmlspecialchars($_POST['Terms']);
 
+    $courseName = mysqli_real_escape_string($db, $courseName);
+
     // Validate inputs
     $passed = true;
 
@@ -32,6 +34,7 @@
     // Check if user is logged in
     if (isset($_COOKIE['local_user'])) {
         $curr_user = htmlspecialchars($_COOKIE['local_user']);
+        $curr_user = mysqli_real_escape_string($db, $curr_user);
     } else {
         $passed = false;
         echo "<div class='message error'>
@@ -82,6 +85,16 @@
             </div>";
     }
 
+    $query = "SELECT * FROM enrollments WHERE user = '$curr_user' AND course_name = '$courseName'";
+    $result = mysqli_query($db, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $passed = false;
+        echo "<div class='message error'>
+                <p>Error: The course \"$courseName\" already exist in your record.</p>
+            </div>";
+    }
+
     if (!$passed) {
         echo "<div class='message error'>
                 <a href='../MyCourse.php'>Go Back<a/>
@@ -97,7 +110,6 @@
     // Prevent SQL injection
     $subject = mysqli_real_escape_string($db, $subject);
     $catalogNumber = mysqli_real_escape_string($db, $catalogNumber);
-    $courseName = mysqli_real_escape_string($db, $courseName);
     $professorName = mysqli_real_escape_string($db, $professorName);
     $creditNumber = mysqli_real_escape_string($db, $creditNumber);
     $finalGrade = mysqli_real_escape_string($db, $finalGrade);

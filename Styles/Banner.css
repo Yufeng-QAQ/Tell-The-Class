@@ -64,17 +64,19 @@
 
 .banner .login{
     display: inline-block;
-    padding: 10px 15px;
-    background-color: var(--purple-light);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 600;
+    min-width: 75px;
+    padding: 8px 12px;
     margin-right: 30px;
+    background-color: var(--purple-light); 
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
-    outline: none;
+    color: white;
+    border-radius: 5px;
     border: none;
+    outline: none;
 }
 
 .banner .login:hover {

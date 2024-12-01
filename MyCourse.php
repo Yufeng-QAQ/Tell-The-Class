@@ -55,7 +55,7 @@
                             <option value="D">D</option>
                             <option value="E">F</option>
                         </select>
-                        <span>Term: </span> <input type="text" name="Terms" placeholder="Fall 2024" required/>
+                        <span>Term: </span> <input type="text" name="Terms" placeholder="e.g Fall 2024" required/>
                     </div>
 
                     <!-- Buttons for adding the class or canceling -->
@@ -74,7 +74,7 @@
         <script>
             function toggleForm() {
                 const form = document.querySelector('.form-container');
-                const set_btn = document.querySelector('button');
+                const set_btn = document.querySelector('.setbutton');                
 
                 if (form.style.display === 'none' || form.style.display === '') {
                     form.style.display = 'block';
@@ -98,7 +98,7 @@
         
 
         // Connect to the database
-        $db = mysqli_connect("studentdb-maria.gl.umbc.edu","zhenqih1","zhenqih1","zhenqih1");
+        $db = mysqli_connect("studentdb-maria.gl.umbc.edu","yufengl1","yufengl1","yufengl1");
 
         if(mysqli_connect_errno())
             exit("Error - could not connect to MySQL");

@@ -50,11 +50,6 @@
                 window.location.href = '../Home.php';
             }, 2000);
         </script>";
-
-
-
-
-        
     }
 
     ?>

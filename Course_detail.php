@@ -6,7 +6,10 @@
     <title>Tell The Class</title>
     <link rel="stylesheet" href="Styles/Banner.css">
     <link rel="stylesheet" href="Styles/Course_detail.css">
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Scripts/Lookup_Course/index.js"></script>
 </head>
 
 <body>
@@ -31,7 +34,6 @@
         <div class="grade-distribution">
             <canvas id="gradeChart"></canvas>
         </div>
-
 
         <?php
             //Connect to the database
@@ -70,7 +72,7 @@
             // Pass PHP data as a JavaScript variable
             const grade_data = <?php echo json_encode($grade_data); ?>;
         </script>
-        <script src="Scripts/bar_chart.js"></script>
+        <script src="Scripts/Lookup_Course/bar_chart.js"></script>
 
 
         <!-- Student comments section -->
@@ -80,12 +82,7 @@
             </button>
 
             <div class="form-container">
-
-                <!-- The processing php is not yet implemented due to it will use The
-                 cookie technique to verify if user is logged in. Which is belongs to 
-                 a task of another team member -->
-
-                <form class="comment-form" action="" method="">
+                <form class="comment-form" id="comment-form" action="" method="">
                     <!-- Grade Selection -->
                     <label for="grade">Grade</label>
                     <select id="grade" name="grade" required>
@@ -111,33 +108,17 @@
                     <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Enter your comment" required></textarea>
                     <br>
 
+                    <!-- Hiddent input to store course_code value -->
+                    <input type="hidden" name="course_code" id="course_code" value="<?php echo htmlspecialchars($course_code);?>">
+                    
                     <!-- Submit Button -->
-                    <input type="submit" value="Submit Comment">
-
+                    <input type="submit" value="Submit Comment" id="submit_comment">
                 </form>
             </div>
 
-            <script>
-                function toggleForm() {
-                    const form = document.querySelector('.form-container');
-                    // Change the button content to "Close"
-                    const post_btn = document.querySelector('.post-comment');
-                    post_btn.innerHTML = "Close";
-                    
-                    // Toggle display property when the "post comment" button is hit
-                    if (form.style.display === 'none' || form.style.display === '') {
-                        form.style.display = 'block';
-                    } else {
-                        form.style.display = 'none';
-                        // Reset the form to initial state
-                        document.querySelector('.comment-form').reset();
-                        post_btn.innerHTML = "Post Comment";
-                    }
-                }   
-            </script>
-
             <!-- This is the individule comment block -->
-            <div class="comment">
+            <div class="comment-list" id="comment-list">
+                <div class="comment">
                 <img src="Image/user.png" alt="user">
 
                 <!-- Contain info such as grade, prof name, and date posted -->
@@ -151,44 +132,42 @@
                         The professor was very nice! Just need to prepare for the test!
                     </p>
                 </div>
-            </div>
+                </div>
 
-            <!-- Repeat stucture above -->
-            <div class="comment">
-                <img src="Image/user.png" alt="user">
-                <div class="comment-info">
-                    <div class="comment-header">
-                        <span class="grade">Grade: A</span>
-                        <span>Prof: Professor Name</span>
-                        <span>10-11-2024</span>
+                <!-- Repeat stucture above -->
+                <div class="comment">
+                    <img src="Image/user.png" alt="user">
+                    <div class="comment-info">
+                        <div class="comment-header">
+                            <span class="grade">Grade: A</span>
+                            <span>Prof: Professor Name</span>
+                            <span>10-11-2024</span>
+                        </div>
+                        <p class="comment-text">
+                            The professor was very nice! Just need to prepare for the test!
+                            The professor was very nice! Just need to prepare for the test!
+                            The professor was very nice! Just need to prepare for the test!
+                            The professor was very nice! Just need to prepare for the test!
+                            The professor was very nice! Just need to prepare for the test!
+                        </p>
                     </div>
-                    <p class="comment-text">
-                        The professor was very nice! Just need to prepare for the test!
-                        The professor was very nice! Just need to prepare for the test!
-                        The professor was very nice! Just need to prepare for the test!
-                        The professor was very nice! Just need to prepare for the test!
-                        The professor was very nice! Just need to prepare for the test!
-                    </p>
+                </div>
+
+                <div class="comment">
+                    <img src="Image/user.png" alt="user">
+                    <div class="comment-info">
+                        <div class="comment-header">
+                            <span class="grade">Grade: A</span>
+                            <span>Prof: Professor Name</span>
+                            <span>10-11-2024</span>
+                        </div>
+                        <p class="comment-text">
+                            If you study, you can get an A.
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <div class="comment">
-                <img src="Image/user.png" alt="user">
-                <div class="comment-info">
-                    <div class="comment-header">
-                        <span class="grade">Grade: A</span>
-                        <span>Prof: Professor Name</span>
-                        <span>10-11-2024</span>
-                    </div>
-                    <p class="comment-text">
-                        If you study, you can get an A.
-                    </p>
-                </div>
-            </div>
-
         </div>
-
-
     </div>
 
     
