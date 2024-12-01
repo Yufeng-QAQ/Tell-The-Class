@@ -219,3 +219,23 @@ li {
     background-color: #ddd; 
 }
 
+/* Style for the Edit button */
+.edit-button {
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* No border */
+    padding: 6px 12px;          /* Padding for smaller size */
+    font-size: 14px;            /* Smaller font size */
+    text-align: center;         /* Center the text */
+    text-decoration: none;      /* Remove underline */
+    display: inline-block;      /* Make the button inline */
+    margin: 5px 0 5px 40px;     /* Left margin set to 40px to add space on the left */
+    cursor: pointer;           /* Pointer cursor on hover */
+    border-radius: 4px;         /* Slightly rounded corners */
+    transition: background-color 0.3s ease;  /* Smooth transition for background color */
+}
+
+/* Hover effect for the Edit button */
+.edit-button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}

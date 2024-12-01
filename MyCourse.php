@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/MyCourse.css" />
     <link rel="stylesheet" href="Styles/Banner.css">
+    <script type = "text/javascript" src = "Scripts/loadcourse.js" ></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
     <title>My Course</title>
 </head>
 
@@ -22,6 +24,7 @@
         <div class="set-btn">
             <!-- Button to add a class -->
             <button class="setbutton" type="button" onclick="toggleForm()">Add Class</button>
+            <button class="setbutton" type="button" onclick="editClass()">Edit Class</button>
         </div>
 
         <!-- Container for the "Add Class" form -->
@@ -62,7 +65,7 @@
                     <div class="op">
                         <div>
                             <!-- Button to add the class -->
-                            <span><input class="popbutton" type="submit" value="Add Class" /></span>
+                            <span><input class="popbutton" type="submit" value="Add Class" id ="addbutton" /></span>
 
                         </div>
                     </div>
@@ -87,87 +90,76 @@
             }
         </script>
 
-        <!-- PHP script written by Yufeng -->
-        <?php
-        $curr_user = "";
-        if (isset($_COOKIE['local_user'])) {
-            $curr_user = $_COOKIE["local_user"];
+<div class="data" style="display: none;"> 
+    <form class="data-form" id="dataForm">
+        <div class="Addclass">
+            <!-- First line of the form with Subject and Catalog Number -->
+            <div class="firstline">
+                <span>Course_ID:</span><input type="number" name="course_id" id="course_ids" />
+            </div>
+            <div class="firstline">
+                <span>Subject: </span><input type="text" name="Subject" id="subjects" placeholder="e.g CMSC" required/>
+                <span>Catalog #: </span><input type="number" name="Catalog" id="Catalogs" placeholder="e.g 341" required/>
+            </div>
+
+            <!-- Class name input field -->
+            <div class="firstline">
+                <span>Class name: </span> <input type="text" name="Course_name" id="course" placeholder="e.g Data Structures" required/>
+            </div>
+
+            <!-- Professor and Credits input fields -->
+            <div class="firstline">
+                <span>Professor: </span> <input type="text" name="Professor_name" id="name" required/>
+                <span># of Credit: </span> <input type="number" name="Credit_number" id="number" required/>
+            </div>
+
+            <!-- Final Grade and Term input fields -->
+            <div class="firstline">
+                <span>Final Grade: </span>
+                <select name="Grade" id="letter">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">F</option>
+                </select>
+                <span>Term: </span> <input type="text" name="Terms" id="semester" placeholder="Fall 2024" required/>
+            </div>
+
+            <!-- Buttons for adding the class or canceling -->
+            <div class="op">
+                <div>
+                    <!-- Button to add the class -->
+                    <span><input class="popbutton" type="button" value="Edit Class" id ="editbutton" /></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    function editClass() {
+        const formContainer = document.querySelector('.data'); 
+        const toggleButton = document.getElementById('button');
+
+        if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+            
+            formContainer.style.display = 'block';
+            toggleButton.innerHTML = "Cancel";
         } else {
-            echo "<p class='prompt-login'>Please login in to see My Course record</p>";
+            formContainer.style.display = 'none';
+            toggleButton.innerHTML = "Edit Class";
+            document.querySelector('.data-form').reset();
         }
-        
-
-        // Connect to the database
-        $db = mysqli_connect("studentdb-maria.gl.umbc.edu","yufengl1","yufengl1","yufengl1");
-
-        if(mysqli_connect_errno())
-            exit("Error - could not connect to MySQL");
-
-        $query = "SELECT subject, catalog, course_name, prof_name, credit_number, grade, term 
-                FROM enrollments 
-                WHERE user = '$curr_user'
-                ORDER BY 
-                    CASE 
-                        WHEN term LIKE 'Fall%' THEN 1
-                        WHEN term LIKE 'Summer%' THEN 2
-                        WHEN term LIKE 'Spring%' THEN 3
-                        WHEN term LIKE 'Winter%' THEN 4
-                    END, 
-                    SUBSTRING(term, -4) DESC";
-
-        $result = mysqli_query($db, $query);
-
-        $current_term = '';
-
-        if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                // Gather information
-                $term = $row['term'];
-                $subject = $row['subject'];
-                $catalog = $row['catalog'];
-                $course_name = $row['course_name'];
-                $credits = $row['credit_number'];
-                $prof_name = $row['prof_name'];
-                $grade = $row['grade'];
-
-                // Check if we're starting a new term
-                if ($term !== $current_term) {
-                    // Close the previous term, if any
-                    if ($current_term != '') {
-                        echo '</div>';
-                    }
-                    
-                    // Print the term header and open the semester div
-                    echo '<div class="semester">';
-                    echo '<h4 class="text_bold semester-title">' . htmlspecialchars($term) . '</h4>';
-                    
-                    // Update the current term tracker
-                    $current_term = $term;
-                }
-
-                // Print each class entry
-                echo '<div class="class">';
-                echo '    <div class="info">';
-                echo '        <span class="text_size"><span class="text_bold course-code">' . htmlspecialchars($subject . ' ' . $catalog) . '</span> ';
-                echo                 htmlspecialchars($course_name) . '</span>';
-                echo '        <br />';
-                echo '        <span class="sub-info">' . htmlspecialchars($credits) . ' Credits · ' . htmlspecialchars($prof_name) . '</span>';
-                echo '    </div>';
-                echo '    <span class="right">' . htmlspecialchars($grade) . '</span>';
-                echo '</div>';
-            }
-            // Close the final semester div
-            echo '</div>';
-        } else {
-            echo "Error fetching enrollments: " . mysqli_error($db);
-        }
-
-        ?>
-    </div>
-
-    
-    
+    }
+</script>
+<div class="course-history" id="content">
+    <p>ww</p>
+</div>    
 
 </body>
+
+
 
 </html>
