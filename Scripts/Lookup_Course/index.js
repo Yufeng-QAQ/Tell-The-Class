@@ -1,8 +1,10 @@
 "use strict"
 var user = "";
+var course_code = "";
 window.onload = pageLoad;
 
 function pageLoad() {
+    course_code = document.getElementById("course_code").value;
     fetchUser();
     fetchComments();
     document.querySelector(".comment-form").onsubmit = submitComment;
@@ -62,6 +64,8 @@ const submitComment = (event) => {
             if (response.success) {
                 alert("Comment submitted successfully!");
                 event.target.reset();   // Reset form table
+                const code = course_code.split(" ");
+                window.location.href = `course_detail.php?course_code=${encodeURIComponent(code[0])}+${encodeURIComponent(code[1])}`;
             } else {
                 alert(`Error: ${response.error}`);
             }
@@ -76,7 +80,6 @@ const submitComment = (event) => {
 const fetchComments = () => {
     const form = document.querySelector(".comment-form"); // Get the form
     const course_code = form.querySelector("input[name='course_code']").value;
-    console.log(course_code);
     
     var ajax = new XMLHttpRequest();
     

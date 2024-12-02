@@ -51,11 +51,11 @@ a {
     margin-bottom: 140px;
     width: 30%;
     min-width: 400px;
-    height: 350px;
+    min-height: 350px;
     border-radius: 3pt;
     border-style: solid;
     color: white;
-    background-color: rgb(100, 100, 100, 0.7);
+    background-color: rgb(100, 100, 100, 0.8);
     border-color: rgb(227, 232, 236);
 }
 
@@ -67,8 +67,7 @@ a {
     border: none;
     font-size: 16px;
     padding: 12px 24px;
-    margin-left: 150px;
-    margin-top: 20px;
+    margin: 20px 0 10px 150px;
 }
 
 #sign_in_button:hover {
@@ -135,10 +134,18 @@ a {
 }
 
 .home-content .welcome-msg {
+    display: none;
     color: white;
     font-size: 50px;
     font-family: fantasy;
     text-align: center;
     justify-content: center;
     margin-top: 130px;
+}
+
+.home-content .login-info .feedback {
+    display: inline-block;
+    margin-top: 5px;
+    color: rgb(255, 168, 168);
+    font-size: 14px;
 }

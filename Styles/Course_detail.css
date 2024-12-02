@@ -68,7 +68,8 @@ li {
 .course-comment .comment {
     display: flex;
     min-height: 100px;
-    width: 650px;
+    max-width: 720px;
+    
     margin-top: 15px;
 
 }

@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="Styles/Banner.css">
     <link href="Styles/Home.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+    <script src="Scripts/Home/Check.js"></script>
     <title>Sign In</title>
 </head>
 
@@ -45,18 +47,22 @@
                 Forget Account
             </p>
             <!-- form type for future implementations -->
-            <form class="sign_in_form" action="Forget_account.php" method="POST">
-                <div class='login-info'>
+            <form class="sign_in_form" method="POST" onsubmit="return false;">
+                <div class="login-info">
                     <p><label>
-                            Username<br />
-                            <input class='account_input' type='text' name='html_username' size='30' />
+                            <span class="input_variable">Username</span><br />
+                            <input class="account_input" type="text" name="html_username" size="30" id="forgot_uname"
+                                value="" />
+                            <span class="feedback" id="ifFound"></span>
                         </label></p>
                     <p><label>
-                            New Password <br />
-                            <input class='account_input' type='password' name='html_password' size='30' />
+                            <span class="input_variable">New Password</span><br />
+                            <input class="account_input" type="password" name="html_password" size="30" id="forgot_pword"
+                                value="" />
+                            <span class="feedback" id="isGood"></span>
                         </label></p>
                 </div>
-
+    
                 <button id="sign_in_button" type="submit">Submit</button>
             </form>
         </div>
