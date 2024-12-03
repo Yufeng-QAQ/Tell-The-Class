@@ -22,7 +22,7 @@ li {
 
 /* Styles for the "Add Class" button */
 .setbutton {
-    display: block;
+    display: inline;
     background-color: var(--purple-dark); /* Button background color */
     width: 130px; 
     height: 40px;
@@ -119,6 +119,7 @@ li {
     color: blue;
     font-weight: bold;
     font-size: 24px; 
+    margin-right: 10px;
 }
 
 .form-container {
@@ -135,6 +136,7 @@ li {
 /* Styles for the "Add Class" form container */
 .Addclass {
     max-width: 700px; 
+    min-width: 550px;
     margin: 0 auto; 
     border: 2px solid #ddd; 
     padding: 20px; 
@@ -151,11 +153,10 @@ li {
 
 /* Styles for labels in the first line */
 .firstline span {
-    width: 120px; 
+    width: 80px; 
     margin-right: 10px; 
     font-weight: bold; 
     color: #2e2e8f; 
-    margin-right: 10px;
 }
 
 /* Styles for input and select elements in the first line */

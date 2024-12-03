@@ -8,7 +8,7 @@
 <body>
     <?php
     // Connect to the database
-    $db = mysqli_connect("studentdb-maria.gl.umbc.edu","zhenqih1","zhenqih1","zhenqih1");
+    $db = mysqli_connect("studentdb-maria.gl.umbc.edu","yufengl1","yufengl1","yufengl1");
     if(mysqli_connect_errno())
         exit("Error - could not connect to MySQL");
 
@@ -41,10 +41,10 @@
             </div>";
     }
 
-    if (!preg_match("/^[a-zA-Z\s]+$/", $subject)) {
+    if (!preg_match("/^[A-Z\s]+$/", $subject)) {
         $passed = false;
         echo "<div class='message error'>
-                <p>Error: Subject is required and should contain only letters and whitespace.</p>
+                <p>Error: Subject is required and should contain only Uppercase letters and whitespace.</p>
             </div>";
     }
     if (!preg_match("/^\d+$/", $catalogNumber)) {
@@ -96,7 +96,7 @@
 
     if (!$passed) {
         echo "<div class='message error'>
-                <a href='../MyCourse.php'>Go Back<a/>
+                <a href='../../MyCourse.php'>Go Back<a/>
             </div>";
         mysqli_close($db);
         exit;
@@ -136,12 +136,12 @@
         // Redirect to MyCourse page after 3 seconds
         echo "<div class='message success'>
                 <p>Success! The course \"$courseName\" has been added to your record.</p>
-                <a href='../MyCourse.php'>Go Back<a/>
+                <a href='../../MyCourse.php'>Go Back<a/>
             </div>";
 
         echo "<script>
             setTimeout(function() {
-                window.location.href = '../MyCourse.php';
+                window.location.href = '../../MyCourse.php';
             }, 3000);
         </script>";
     }
