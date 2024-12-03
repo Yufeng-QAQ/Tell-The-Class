@@ -29,7 +29,7 @@
 
         <!-- Container for the "Add Class" form -->
         <div class="form-container">
-            <form class="class-form" id="add-class-form" method="POST" action="Scripts/MyCourse/mycourse_process.php">
+            <form class="class-form" id="add-class-form">
                 <div class="Addclass">
                     <!-- First line of the form with Subject and Catalog Number -->
                     <div class="firstline">
@@ -61,7 +61,7 @@
                         <span>Term: </span> <input type="text" id="add_term" name="Terms" placeholder="e.g Fall 2024" required/>
                     </div>
 
-                    <!-- Buttons for adding the class or canceling -->
+                    <!-- Buttons for adding the class or canceling -->       
                     <div class="op">
                         <div>
                             <!-- Button to add the class -->

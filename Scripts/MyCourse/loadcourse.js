@@ -2,7 +2,7 @@
 window.onload = function() {
     loadCourse();
     document.getElementById("editbutton").onclick = edit;
-    $("add-class-form").onSubmit = addClass;
+    $("add-class-form").onsubmit = addClass;
 };
 
 function loadCourse() {
@@ -19,11 +19,45 @@ function loadCourse() {
     });
 }
 
-function addClass() {
-    console.log("Add class");
+function addClass(event) {
+    event.preventDefault();
+    
+    var subject = document.getElementById("add_subject").value;
+    var catalogNumber = document.getElementById("add_catalog").value;
+    var courseName = document.getElementById("add_course_name").value;
+    var professorName = document.getElementById("add_prof_name").value;
+    var creditNumber = document.getElementById("add_credit").value;
+    var finalGrade = document.getElementById("add_grade").value;
+    var terms = document.getElementById("add_term").value;
 
+    if (!validateData(0, subject, catalogNumber, courseName, professorName, creditNumber, finalGrade, terms)) {
+        return; 
+    }
+
+    console.log(`Add ${courseName}`);
     
-    
+    new Ajax.Request("Scripts/MyCourse/mycourse_process.php", {
+        method: "post",
+        parameters: {
+            Subject: subject,
+            Catalog: catalogNumber,
+            Course_name: courseName,
+            Professor_name: professorName,
+            Credit_number: creditNumber,
+            Grade: finalGrade,
+            Terms: terms
+        },
+        onSuccess: (response) => {
+            console.log("Server Response: " + response.responseText);
+            alert(response.responseText);
+            loadCourse();
+        }, 
+        onFailure: (response) => {
+            console.log("Request failed. Status: " + response.status);
+            alert("Unable to add enrollment record.");
+        }
+
+    });
 }
 
 
@@ -39,11 +73,8 @@ function edit() {
 
     // Validate the inputs before submitting
     if (!validateData(id, subj, log, className, prof, numCredit, Final, terms)) {
-        console.log("Validation failed, not sending request.");
         return; // If validation fails, stop execution
     }
-
-    console.log("Validation passed, sending AJAX request...");
 
     // If validation passed, make the AJAX request
     new Ajax.Request("Scripts/MyCourse/edit_course.php", {
@@ -59,8 +90,8 @@ function edit() {
             term: terms
         },
         onSuccess: function(response) {
-            console.log("Server Response: " + response.responseText);  // Log the server's response
-            alert(response.responseText); // Optionally, show the response to the user
+            console.log("Server Response: " + response.responseText);
+            alert(response.responseText);
         },
         onFailure: function(response) {
             console.log("Request failed. Status: " + response.status);
@@ -83,7 +114,7 @@ function validateData(id, subj, log, className, prof, numCredit, Final, terms) {
     }
 
     // 2. Validate subject, catalog, className, professor (non-empty with letters and spaces)
-    var textPattern = /^[a-zA-Z\s]+$/;
+    var textPattern = /^[a-zA-Z\s:]+$/;
     if (!textPattern.test(subj)) {
         showError("subjects", "Please enter a valid Subject (letters and spaces only).");
         return false;
